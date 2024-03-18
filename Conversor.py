@@ -25,7 +25,7 @@ def rgb_to_hsv(cor):
         s = 0
 
     v = (maximo / 255) * 100
-    return [int(h), int(s), int(v)]
+    return int(h), int(s), int(v)
 
 
 def hsv_to_rgb(cor_hsv):
