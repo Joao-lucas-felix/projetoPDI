@@ -1,5 +1,5 @@
 from PIL import Image
-import Conversor
+from Services import Conversor
 
 conversor = Conversor
 image = Image.open("Images/lenna.jpg")

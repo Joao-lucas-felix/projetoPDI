@@ -1,6 +1,6 @@
 from PIL import Image
-from Conversor import  image_to_hsv_format
-from Conversor import hsv_matriz_to_image
+from Services.Conversor import  image_to_hsv_format
+from Services.Conversor import hsv_matriz_to_image
 
 image = Image.open("Images/img2.jpg")
 hsv_image = image_to_hsv_format(image)

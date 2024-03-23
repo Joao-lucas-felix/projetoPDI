@@ -1,6 +1,6 @@
-from Util import image_to_rgb_matriz
+from Util.Util import image_to_rgb_matriz
 from PIL import Image
-from Filtros_hsv import filtro_mutiplicativo_brilho
+from Services.Filtros_hsv import filtro_mutiplicativo_brilho
 
 matriz = image_to_rgb_matriz(Image.open("./Images/DancingInWater.jpg"))
 

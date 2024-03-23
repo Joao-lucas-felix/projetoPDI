@@ -1,7 +1,5 @@
 from PIL import Image
-from Model import Imagem
-
-
+from Model.Imagem import Imagem
 def image_to_rgb_matriz(image: Image):
     rgb_matriz = []
     for i in range(0, image.width):
