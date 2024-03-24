@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f8a2f51-8e89-45ed-9c8d-595d8401ec74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/testes/Images/spiderman1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/Images/spiderman2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/Images/spiderman3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/teste_04.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/teste_05.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/teste_06.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Conversor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filtros_hsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Filtros_hsv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Imagem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/teste_01.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/teste_02.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/teste_03.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Filtros_hsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Filtros_hsv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,9 @@
     &quot;Python.teste_01.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_02.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_03.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_04.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_05.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_06.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -59,36 +63,14 @@
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\testes\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\testes\Images" />
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\Services" />
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\Model" />
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\Util" />
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\testes" />
-      <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.teste_03">
-    <configuration name="teste_01 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="projetoPDI" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_01.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.teste_04">
     <configuration name="teste_01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoPDI" />
       <option name="ENV_FILES" value="" />
@@ -155,11 +137,79 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="teste_04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="projetoPDI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_04.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="teste_05" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="projetoPDI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_05.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="teste_06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="projetoPDI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_06.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.teste_04" />
+        <item itemvalue="Python.teste_06" />
+        <item itemvalue="Python.teste_05" />
         <item itemvalue="Python.teste_03" />
         <item itemvalue="Python.teste_02" />
-        <item itemvalue="Python.teste_01 (1)" />
       </list>
     </recent_temporary>
   </component>
