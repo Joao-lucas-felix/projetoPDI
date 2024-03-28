@@ -22,3 +22,25 @@ def rgb_matriz_to_image(rgb: Imagem):
         for j in range(0, rgb.size[1]):
             img.putpixel((i, j), rgb.matriz[i][j])
     return img
+
+
+def read_mask_from_file(path: str):
+    with open(path, "r") as file:
+        mask_file = file.readline()
+
+    mask_file = mask_file.split()
+    count = 2
+    mascara = []
+    dim = [int(mask_file[0]), int(mask_file[1])]
+    for i in range(0, dim[0]):
+        linha = []
+        for j in range(0, dim[1]):
+            linha.append(float(mask_file[count]))
+            count += 1
+        mascara.append(linha)
+
+    mask = Imagem()
+    mask.size = dim
+    mask.matriz = mascara
+
+    return mask
