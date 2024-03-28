@@ -69,6 +69,3 @@ def filtro_transfere_saturacao(imagem1: Imagem, imagem2: Imagem):
             cor_img2 = rgb_to_hsv(imagem2.matriz[i][j])
             cor_final = (cor_img2[0], cor_img1[1], cor_img2[2])
             imagem2.matriz[i][j] = hsv_to_rgb(cor_final)
-
-
-
