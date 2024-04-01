@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f8a2f51-8e89-45ed-9c8d-595d8401ec74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/testes/masks/media.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/teste_07.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Correlacao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/masks/box_1x26.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/masks/gaussian_5x5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/masks/sobel1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/masks/sobel2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/masks/media.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/masks/media.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_01.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_03.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_04.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_04.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_05.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_05.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_07.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes/teste_07.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +57,7 @@
     &quot;Python.teste_03.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_04.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_05.executor&quot;: &quot;Run&quot;,
-    &quot;Python.teste_06.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_06.executor&quot;: &quot;Debug&quot;,
     &quot;Python.teste_07.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -205,9 +214,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.teste_07" />
-        <item itemvalue="Python.teste_04" />
         <item itemvalue="Python.teste_06" />
         <item itemvalue="Python.teste_05" />
+        <item itemvalue="Python.teste_04" />
         <item itemvalue="Python.teste_03" />
       </list>
     </recent_temporary>

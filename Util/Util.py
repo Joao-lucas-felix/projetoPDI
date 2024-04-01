@@ -1,6 +1,7 @@
+import numpy as np
 from PIL import Image
 from Model.Imagem import Imagem
-
+import sympy as sp
 
 def image_to_rgb_matriz(image: Image):
     rgb_matriz = []
@@ -35,7 +36,10 @@ def read_mask_from_file(path: str):
     for i in range(0, dim[0]):
         linha = []
         for j in range(0, dim[1]):
-            linha.append(float(mask_file[count]))
+            linha.append(float(sp.N(mask_file[count])))
+            # pega uma expressão aritimetica  e  a resolve com o sympy
+            # depois faz um parse para float, dessa forma podemos definir expressões
+            # aritimeticas nas mascaras.
             count += 1
         mascara.append(linha)
 
