@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f8a2f51-8e89-45ed-9c8d-595d8401ec74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sistema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/teste_08.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,25 +36,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.teste_01 (1).executor": "Run",
-    "Python.teste_01.executor": "Run",
-    "Python.teste_02.executor": "Run",
-    "Python.teste_03.executor": "Run",
-    "Python.teste_04.executor": "Run",
-    "Python.teste_05.executor": "Run",
-    "Python.teste_06.executor": "Debug",
-    "Python.teste_07.executor": "Run",
-    "Python.teste_08.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jlmac/PycharmProjects/projetoPDI/testes/Images",
-    "settings.editor.selected.configurable": "configurable.group.language"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_01 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_01.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_02.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_03.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_04.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_05.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_06.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.teste_07.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_08.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jlmac/PycharmProjects/projetoPDI/testes/Images&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\testes\Images" />
