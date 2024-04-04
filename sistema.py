@@ -14,7 +14,7 @@ def rgb_to_hsv(cor):
     r, g, b = cor[0], cor[1], cor[2]
     maximo = max(r, g, b)
     minimo = min(r, g, b)
-    h = 0  # so por que tava dando um warning
+    h = 0
     # definição do H
     if r == g and r == b:
         h = 0
@@ -285,3 +285,28 @@ def processamento_para_exibir_imagem(img: Imagem):
         matriz.append(linha)
     img_nova.matriz = matriz
     return img_nova
+
+
+# processamento para exibir sobel:
+def processamento_valor_absoluto(img: Imagem):
+    img_nova = Imagem()
+    img_nova.size = img.size
+    matriz = []
+    for i in range(0, img_nova.size[0]):
+        line = []
+        for j in range(0, img_nova.size[1]):
+            r, g, b = img.matriz[i][j]
+            r = abs(r)
+            g = abs(g)
+            b = abs(b)
+            line.append((r, g, b))
+        matriz.append(line)
+    img_nova.matriz = matriz
+    return img_nova
+
+# Criação do metodo para equalização do histograma:
+
+# definir um metodo que faz a criação do histograma um dicionario com chaves de 0 - 255
+# definir um metodo que percorre a imagem adcinando a 1 ao valor do histograma associado a chave
+# definir um metodo que calcula o histograma equalizado
+# definir um metodo que aplica a equalização a imagem de entrada.
