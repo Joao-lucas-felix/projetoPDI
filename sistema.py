@@ -379,3 +379,14 @@ def plot_graficos_de_barras(lista_de_dicionarios):
 
     plt.tight_layout()
     plt.show()
+
+
+def save_image(img: Imagem, path: str):
+    img = rgb_matriz_to_image(img)
+    img.save(path)
+
+
+def open_image(path: str):
+    img = Image.open(path)
+    img = image_to_rgb_matriz(img)
+    return img
