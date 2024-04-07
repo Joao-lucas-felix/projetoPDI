@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import numpy as np
 import sympy as sp
 from PIL import Image
 
@@ -14,7 +16,7 @@ def rgb_to_hsv(cor):
     r, g, b = cor[0], cor[1], cor[2]
     maximo = max(r, g, b)
     minimo = min(r, g, b)
-    h = 0  # so por que tava dando um warning
+    h = 0
     # definição do H
     if r == g and r == b:
         h = 0
@@ -285,3 +287,95 @@ def processamento_para_exibir_imagem(img: Imagem):
         matriz.append(linha)
     img_nova.matriz = matriz
     return img_nova
+
+
+# processamento para exibir sobel:
+def processamento_valor_absoluto(img: Imagem):
+    img_nova = Imagem()
+    img_nova.size = img.size
+    matriz = []
+    for i in range(0, img_nova.size[0]):
+        line = []
+        for j in range(0, img_nova.size[1]):
+            r, g, b = img.matriz[i][j]
+            r = abs(r)
+            g = abs(g)
+            b = abs(b)
+            r = min(255, r)
+            g = min(255, g)
+            b = min(255, b)
+            line.append((r, g, b))
+        matriz.append(line)
+    img_nova.matriz = matriz
+    return img_nova
+
+
+# Criação do metodo para Espanção de histograma:
+
+def histogram_expansion(img: Imagem):
+    mat = np.array(img.matriz)
+    # Separando os canais de cor
+    canal_r = mat[:, :, 0]
+    canal_g = mat[:, :, 1]
+    canal_b = mat[:, :, 2]
+
+    # Achando rmax e rmim em R, G e B. E calculando (l-1)/ rmax-rmim
+    max_r = np.amax(canal_r)
+    min_r = np.amin(canal_r)
+    const_r = 255 / (max_r - min_r)
+    print(max_r)
+    print(min_r)
+    max_g = np.amax(canal_g)
+    min_g = np.amin(canal_g)
+    const_g = 255 / (max_g - min_g)
+
+    max_b = np.amax(canal_b)
+    min_b = np.amin(canal_b)
+    const_b = 255 / (max_b - min_b)
+
+    new_image = Imagem()
+    new_image.size = img.size
+    new_image.matriz = []
+    # fazendo o processo de expanção de histograma
+    print(max_r)
+    print(min_r)
+    for i in range(new_image.size[0]):
+        line = []
+        for j in range(new_image.size[1]):
+            new_r = round((img.matriz[i][j][0] - min_r) * const_r)
+            new_g = round((img.matriz[i][j][1] - min_g) * const_g)
+            new_b = round((img.matriz[i][j][2] - min_b) * const_b)
+            line.append((new_r, new_g, new_b))
+
+        new_image.matriz.append(line)
+    return new_image
+
+
+# metodos para a vizualização do histograma antes e pos expanção
+def build_histogram(img: Imagem):
+    r = {i: 0 for i in range(256)}
+    g = {i: 0 for i in range(256)}
+    b = {i: 0 for i in range(256)}
+
+    for i in range(0, img.size[0]):
+        for j in range(0, img.size[1]):
+            r[img.matriz[i][j][0]] += 1
+            g[img.matriz[i][j][1]] += 1
+            b[img.matriz[i][j][2]] += 1
+    return [r, g, b]
+
+
+def plot_graficos_de_barras(lista_de_dicionarios):
+    fig, axs = plt.subplots(1, len(lista_de_dicionarios), figsize=(15, 5))
+
+    for i, dicionario in enumerate(lista_de_dicionarios):
+        chaves = list(dicionario.keys())
+        valores = list(dicionario.values())
+
+        axs[i].bar(chaves, valores)
+        axs[i].set_xlabel('Chaves')
+        axs[i].set_ylabel('Valores')
+        axs[i].set_title('Gráfico {}'.format(i + 1))
+
+    plt.tight_layout()
+    plt.show()
