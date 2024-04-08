@@ -5,8 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f8a2f51-8e89-45ed-9c8d-595d8401ec74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/teste_aditivo_matiz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste_conversão_rgb_hsv_rgb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste_filtro_saturação.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste_filtros_pontual_brilho_hsv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste_trasfere_sat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes_correlation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Imagem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Conversor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Correlacao.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Filtros_hsv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/Util.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sistema.py" beforeDir="false" afterPath="$PROJECT_DIR$/sistema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/DancingInWater.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/Shapes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/lenna.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/spiderman1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/spiderman2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/spiderman3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/Images/testpat.1k.color2.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/masks/box_1x26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/masks/gaussian_5x5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/masks/media.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/masks/sobel1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/masks/sobel2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_03.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_04.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_05.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_06.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_07.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_08.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_09.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/teste_10.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +90,18 @@
     &quot;Python.teste_08.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_09.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_10.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_aditivo_matiz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_conversão_rgb_hsv_rgb.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_filtro_saturação.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_filtros_pontuais_HSV.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_filtros_pontual_brilho_hsv (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste_trasfere_sat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testes_correlation.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;in__development&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jlmac/PycharmProjects/projetoPDI/testes/Images&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
 }</component>
@@ -75,8 +117,8 @@
       <recent name="C:\Users\jlmac\PycharmProjects\projetoPDI\testes\Images" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.teste_10">
-    <configuration name="teste_06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.testes_correlation">
+    <configuration name="teste_aditivo_matiz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoPDI" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,11 +127,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_06.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teste_aditivo_matiz.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -98,7 +140,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="teste_07" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="teste_conversão_rgb_hsv_rgb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoPDI" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,11 +149,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_07.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teste_conversão_rgb_hsv_rgb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,7 +162,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="teste_08" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="teste_filtro_saturação" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoPDI" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,11 +171,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_08.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teste_filtro_saturação.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +184,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="teste_09" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="teste_trasfere_sat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoPDI" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,11 +193,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_09.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teste_trasfere_sat.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,7 +206,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="teste_10" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="testes_correlation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoPDI" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,11 +215,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes/teste_10.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testes_correlation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,11 +230,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.teste_10" />
-        <item itemvalue="Python.teste_09" />
-        <item itemvalue="Python.teste_07" />
-        <item itemvalue="Python.teste_08" />
-        <item itemvalue="Python.teste_06" />
+        <item itemvalue="Python.testes_correlation" />
+        <item itemvalue="Python.teste_trasfere_sat" />
+        <item itemvalue="Python.teste_aditivo_matiz" />
+        <item itemvalue="Python.teste_filtro_saturação" />
+        <item itemvalue="Python.teste_conversão_rgb_hsv_rgb" />
       </list>
     </recent_temporary>
   </component>

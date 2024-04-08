@@ -1,3 +1,5 @@
+from copy import copy
+
 import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sp
@@ -6,149 +8,140 @@ from PIL import Image
 
 # Arquivo que vai reunir todos os metodos do projeto
 class Imagem:
-    def __int__(self, size, matriz):
+    def __init__(self, size, matriz):
         self.size = size
         self.matriz = matriz
 
 
 # Conversores De RGB - HSV
-def rgb_to_hsv(cor):
-    r, g, b = cor[0], cor[1], cor[2]
-    maximo = max(r, g, b)
-    minimo = min(r, g, b)
-    h = 0
-    # definição do H
-    if r == g and r == b:
-        h = 0
-    elif maximo == r and g >= b:
-        h = 60 * ((g - b) / (maximo - minimo))
-    elif maximo == r and g < b:
-        h = 60 * ((g - b) / (maximo - minimo)) + 360
-    elif maximo == g:
-        h = 60 * ((b - r) / (maximo - minimo)) + 120
-    elif maximo == b:
-        h = 60 * ((r - g) / (maximo - minimo)) + 240
+def rgb_to_hsb(cor_rgb):
+    r, g, b = cor_rgb
+    # Normaliza os valores de RGB para o intervalo [0, 1]
+    r /= 255.0
+    g /= 255.0
+    b /= 255.0
 
-    # definição do S
-    if maximo > 0:
-        s = ((maximo - minimo) / maximo) * 100
-    else:
+    # Encontra o valor máximo e mínimo entre os componentes R, G e B
+    max_val = max(r, g, b)
+    min_val = min(r, g, b)
+
+    # Calcula a diferença entre o máximo e o mínimo
+    delta = max_val - min_val
+
+    # Calcula o componente de brilho (Value)
+    v = max_val
+
+    # Se o valor de delta for muito pequeno, o pixel é uma tonalidade de cinza
+    if delta < 0.00001:
+        h = 0  # Nesse caso, a matiz é indefinida, então pode ser definida como 0
         s = 0
-
-    v = (maximo / 255) * 100
-    return int(h), int(s), int(v)
-
-
-def hsv_to_rgb(cor_hsv):
-    # 1. Converter os valores HSV para o intervalo 0-1
-    h = cor_hsv[0] / 360.0
-    s = cor_hsv[1] / 100.0
-    v = cor_hsv[2] / 100.0
-
-    # 2. Calcular o componente de cor com base na matiz
-    if s == 0:  # caso a saturação seja 0 a cor está na reta acromatica
-        r = g = b = v
     else:
-        h *= 6  # ajuste para o formato adequado como na multiplicação de transformação tem um *60
+        # Calcula o componente de saturação (Saturation)
+        s = delta / max_val
+
+        # Calcula o componente de matiz (Hue)
+        if r == max_val:
+            h = (g - b) / delta
+        elif g == max_val:
+            h = 2 + (b - r) / delta
+        else:
+            h = 4 + (r - g) / delta
+
+        # Converte h para o intervalo [0, 360] graus
+        h *= 60
+        if h < 0:
+            h += 360
+
+    # Retorna os valores HSB
+    return h, s, v
+
+
+def hsb_to_rgb(cor_hsb):
+    h, s, v = cor_hsb
+    if s == 0:
+        r = g = b = int(v * 255)
+    else:
+        h /= 60.0
         i = int(h)
         f = h - i
-        p = v * (1 - s)
-        q = v * (1 - s * f)
-        t = v * (1 - s * (1 - f))
+        p = int(v * (1.0 - s) * 255)
+        q = int(v * (1.0 - (s * f)) * 255)
+        t = int(v * (1.0 - (s * (1.0 - f))) * 255)
+
         if i == 0:
-            r, g, b = v, t, p
+            r, g, b = v * 255, t, p
         elif i == 1:
-            r, g, b = q, v, p
+            r, g, b = q, v * 255, p
         elif i == 2:
-            r, g, b = p, v, t
+            r, g, b = p, v * 255, t
         elif i == 3:
-            r, g, b = p, q, v
+            r, g, b = p, q, v * 255
         elif i == 4:
-            r, g, b = t, p, v
+            r, g, b = t, p, v * 255
         else:
-            r, g, b = v, p, q
+            r, g, b = v * 255, p, q
 
-    # 3. Ajustar os valores RGB de acordo com o valor
-    r = int(r * 255)
-    g = int(g * 255)
-    b = int(b * 255)
-
-    return r, g, b
+    return int(r), int(g), int(b)
 
 
-def image_to_hsv_format(image: Image):
-    hsv_matriz = []
-    for i in range(0, int(image.width)):
-        linha = []
-        for j in range(0, int(image.height)):
-            linha.append(rgb_to_hsv(image.getpixel((i, j))))
-        hsv_matriz.append(linha)
-    return hsv_matriz
+def image_to_hsb_format(image: Imagem):
+    hsv_image = copy(image)
+    for i in range(0, int(image.size[0])):
+        for j in range(0, int(image.size[1])):
+            hsv_image.matriz[i][j] = rgb_to_hsb(image.matriz[i][j])
+
+    return hsv_image
 
 
-def hsv_matriz_to_image(hsv_matriz):
-    image2 = Image.new("RGB", (len(hsv_matriz), len(hsv_matriz[0])), 0)
-    for i in range(0, image2.width):
-        for j in range(0, image2.height):
-            image2.putpixel((i, j), hsv_to_rgb(hsv_matriz[i][j]))
+def hsb_matriz_to_image(hsv_matriz: Imagem):
+    image2 = copy(hsv_matriz)
+    for i in range(0, image2.size[0]):
+        for j in range(0, image2.size[1]):
+            image2.matriz[i][j] = hsb_to_rgb(hsv_matriz.matriz[i][j])
+
     return image2
 
 
 # Filtros em HSV
 def filtro_mutiplicativo_brilho(imagem: Imagem, fator_multiplicativo: float):
-    imagem_filtrada = Imagem()
-    imagem_filtrada.size = imagem.size
-    matriz_nova = []
+    imagem_filtrada = copy(imagem)
     for i in range(0, imagem.size[0]):
-        linha_nova = []
         for j in range(0, imagem.size[1]):
-            hsv_cor = rgb_to_hsv(imagem.matriz[i][j])
+            hsv_cor = rgb_to_hsb(imagem.matriz[i][j])
             brilho = hsv_cor[2] * fator_multiplicativo
             if brilho > 100:
                 brilho = 100
             hsv_cor_nova = (hsv_cor[0], hsv_cor[1], brilho)
-            linha_nova.append(hsv_to_rgb(hsv_cor_nova))
-        matriz_nova.append(linha_nova)
+            imagem_filtrada.matriz[i][j] = hsb_to_rgb(hsv_cor_nova)
 
-    imagem_filtrada.matriz = matriz_nova
     return imagem_filtrada
 
 
 def filtro_multiplicativo_saturacao(imagem: Imagem, fator_multiplicativo: float):
-    imagem_filtrada = Imagem()
-    imagem_filtrada.size = imagem.size
-    matriz_nova = []
+    imagem_filtrada = copy(imagem)
     for i in range(0, imagem.size[0]):
-        linha_nova = []
         for j in range(0, imagem.size[1]):
-            hsv_cor = rgb_to_hsv(imagem.matriz[i][j])
+            hsv_cor = rgb_to_hsb(imagem.matriz[i][j])
             saturacao = hsv_cor[1] * fator_multiplicativo
             if saturacao > 100:
                 saturacao = 100
             hsv_cor_nova = (hsv_cor[0], saturacao, hsv_cor[2])
-            linha_nova.append(hsv_to_rgb(hsv_cor_nova))
-        matriz_nova.append(linha_nova)
+            imagem_filtrada.matriz[i][j] = hsb_to_rgb(hsv_cor_nova)
 
-    imagem_filtrada.matriz = matriz_nova
     return imagem_filtrada
 
 
 def filtro_aditivo_matiz(imagem: Imagem, fator_aditivo: int):
-    imagem_filtrada = Imagem()
-    imagem_filtrada.size = imagem.size
-    matriz_nova = []
+    imagem_filtrada = copy(imagem)
     for i in range(0, imagem.size[0]):
-        linha_nova = []
         for j in range(0, imagem.size[1]):
-            hsv_cor = rgb_to_hsv(imagem.matriz[i][j])
+            hsv_cor = rgb_to_hsb(imagem.matriz[i][j])
             matiz = hsv_cor[0] + fator_aditivo
             if matiz >= 360:
                 matiz = matiz % 360
             hsv_cor_nova = (matiz, hsv_cor[1], hsv_cor[2])
-            linha_nova.append(hsv_to_rgb(hsv_cor_nova))
-        matriz_nova.append(linha_nova)
+            imagem_filtrada.matriz[i][j] = hsb_to_rgb(hsv_cor_nova)
 
-    imagem_filtrada.matriz = matriz_nova
     return imagem_filtrada
 
 
@@ -159,10 +152,10 @@ def filtro_transfere_saturacao(imagem1: Imagem, imagem2: Imagem):
         return
     for i in range(0, imagem1.size[0]):
         for j in range(0, imagem2.size[1]):
-            cor_img1 = rgb_to_hsv(imagem1.matriz[i][j])
-            cor_img2 = rgb_to_hsv(imagem2.matriz[i][j])
+            cor_img1 = rgb_to_hsb(imagem1.matriz[i][j])
+            cor_img2 = rgb_to_hsb(imagem2.matriz[i][j])
             cor_final = (cor_img2[0], cor_img1[1], cor_img2[2])
-            imagem2.matriz[i][j] = hsv_to_rgb(cor_final)
+            imagem2.matriz[i][j] = hsb_to_rgb(cor_final)
 
 
 # Maquina de Correlação
@@ -197,11 +190,7 @@ def correlacao(img: Imagem, mask: Imagem):
         matriz_imagem_final.append(linha_imagem_final)
         pivo[0] += 1
         pivo[1] -= contador
-
-    imagem_final = Imagem()
-    imagem_final.size = [altura_imagem_final, largura_imagem_final]
-    imagem_final.matriz = matriz_imagem_final
-
+    imagem_final = Imagem([altura_imagem_final, largura_imagem_final], matriz_imagem_final)
     return imagem_final
 
 
@@ -224,9 +213,7 @@ def image_to_rgb_matriz(image: Image):
             line.append(image.getpixel((i, j)))
 
         rgb_matriz.append(line)
-    img = Imagem()
-    img.size = image.size
-    img.matriz = rgb_matriz
+    img = Imagem(image.size, rgb_matriz)
     return img
 
 
@@ -256,21 +243,15 @@ def read_mask_from_file(path: str):
             count += 1
         mascara.append(linha)
 
-    mask = Imagem()
-    mask.size = dim
-    mask.matriz = mascara
-
+    mask = Imagem(dim, mascara)
     return mask
 
 
 # processamento que arredonda os floats para inteiros e garante que eles estaram no intervalo (0,255)
 # por meio de min/max
 def processamento_para_exibir_imagem(img: Imagem):
-    img_nova = Imagem()
-    img_nova.size = img.size
-    matriz = []
+    img_nova = Imagem(img.size, img.matriz)
     for i in range(0, img.size[0]):
-        linha = []
         for j in range(0, img.size[1]):
             r, g, b = img.matriz[i][j]
             r = round(r)
@@ -283,30 +264,20 @@ def processamento_para_exibir_imagem(img: Imagem):
             r = max(0, r)
             g = max(0, g)
             b = max(0, b)
-            linha.append((r, g, b))
-        matriz.append(linha)
-    img_nova.matriz = matriz
+            img_nova.matriz[i][j] = (r, g, b)
     return img_nova
 
 
 # processamento para exibir sobel:
 def processamento_valor_absoluto(img: Imagem):
-    img_nova = Imagem()
-    img_nova.size = img.size
-    matriz = []
+    img_nova = Imagem(img.size, img.matriz)
     for i in range(0, img_nova.size[0]):
-        line = []
         for j in range(0, img_nova.size[1]):
             r, g, b = img.matriz[i][j]
             r = abs(r)
             g = abs(g)
             b = abs(b)
-            r = min(255, r)
-            g = min(255, g)
-            b = min(255, b)
-            line.append((r, g, b))
-        matriz.append(line)
-    img_nova.matriz = matriz
+            img_nova.matriz[i][j] = (r, g, b)
     return img_nova
 
 
@@ -323,8 +294,6 @@ def histogram_expansion(img: Imagem):
     max_r = np.amax(canal_r)
     min_r = np.amin(canal_r)
     const_r = 255 / (max_r - min_r)
-    print(max_r)
-    print(min_r)
     max_g = np.amax(canal_g)
     min_g = np.amin(canal_g)
     const_g = 255 / (max_g - min_g)
@@ -333,49 +302,56 @@ def histogram_expansion(img: Imagem):
     min_b = np.amin(canal_b)
     const_b = 255 / (max_b - min_b)
 
-    new_image = Imagem()
-    new_image.size = img.size
-    new_image.matriz = []
+    new_image = Imagem(img.size, img.matriz)
     # fazendo o processo de expanção de histograma
     print(max_r)
     print(min_r)
     for i in range(new_image.size[0]):
-        line = []
         for j in range(new_image.size[1]):
             new_r = round((img.matriz[i][j][0] - min_r) * const_r)
             new_g = round((img.matriz[i][j][1] - min_g) * const_g)
             new_b = round((img.matriz[i][j][2] - min_b) * const_b)
-            line.append((new_r, new_g, new_b))
-
-        new_image.matriz.append(line)
+            new_image.matriz[i][j] = (new_r, new_g, new_b)
     return new_image
 
 
 # metodos para a vizualização do histograma antes e pos expanção
 def build_histogram(img: Imagem):
-    r = {i: 0 for i in range(256)}
-    g = {i: 0 for i in range(256)}
-    b = {i: 0 for i in range(256)}
+    mat = np.array(img.matriz)
+    # Separando os canais de cor
+    canal_r = mat[:, :, 0]
+    canal_g = mat[:, :, 1]
+    canal_b = mat[:, :, 2]
+    max_r = np.amax(canal_r)
+    max_g = np.amax(canal_g)
+    max_b = np.amax(canal_b)
+
+    r = {i: 0 for i in range(0, int(max_r)+1)}
+    g = {i: 0 for i in range(0, int(max_g)+1)}
+    b = {i: 0 for i in range(0, int(max_b)+1)}
 
     for i in range(0, img.size[0]):
         for j in range(0, img.size[1]):
             r[img.matriz[i][j][0]] += 1
             g[img.matriz[i][j][1]] += 1
             b[img.matriz[i][j][2]] += 1
+    print(r)
+    print(g)
+    print(b)
     return [r, g, b]
 
 
 def plot_graficos_de_barras(lista_de_dicionarios):
-    fig, axs = plt.subplots(1, len(lista_de_dicionarios), figsize=(15, 5))
-
+    fig, axs = plt.subplots(1, len(lista_de_dicionarios), figsize=(18, 6))
+    canais_cor = ["R", "G", "B"]
     for i, dicionario in enumerate(lista_de_dicionarios):
         chaves = list(dicionario.keys())
         valores = list(dicionario.values())
 
         axs[i].bar(chaves, valores)
-        axs[i].set_xlabel('Chaves')
+        axs[i].set_xlabel('Niveis de quantização')
         axs[i].set_ylabel('Valores')
-        axs[i].set_title('Gráfico {}'.format(i + 1))
+        axs[i].set_title('Canal {}'.format(canais_cor[i]))
 
     plt.tight_layout()
     plt.show()
@@ -390,3 +366,34 @@ def open_image(path: str):
     img = Image.open(path)
     img = image_to_rgb_matriz(img)
     return img
+
+
+def multplyB(path: str, fator: float, save_path: str):
+    img = open_image(path)
+    filtro_mutiplicativo_brilho(img, fator)
+    save_image(img, save_path)
+
+
+def multplyS(path: str, fator: float, save_path: str):
+    img = open_image(path)
+    filtro_multiplicativo_saturacao(img, fator)
+    save_image(img, save_path)
+
+
+def addM(path: str, fator: int, save_path: str):
+    img = open_image(path)
+    filtro_aditivo_matiz(img, fator)
+    save_image(img, save_path)
+
+
+def tranfereS(img1_path: str, img2_path: str, save_path: str):
+    img1 = open_image(img1_path)
+    img2 = open_image(img2_path)
+    filtro_transfere_saturacao(img1, img2)
+    save_image(img2, save_path)
+
+def makecorelation(path_image: str, path_mask: str):
+    img = open_image(path_image)
+    mask = read_mask_from_file(path_mask)
+    corelation = correlacao(img, mask)
+    return corelation
