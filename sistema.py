@@ -1,6 +1,5 @@
 from copy import copy
 
-import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sp
 from PIL import Image
@@ -326,9 +325,9 @@ def build_histogram(img: Imagem):
     max_g = np.amax(canal_g)
     max_b = np.amax(canal_b)
 
-    r = {i: 0 for i in range(0, int(max_r)+1)}
-    g = {i: 0 for i in range(0, int(max_g)+1)}
-    b = {i: 0 for i in range(0, int(max_b)+1)}
+    r = {i: 0 for i in range(0, int(max_r) + 1)}
+    g = {i: 0 for i in range(0, int(max_g) + 1)}
+    b = {i: 0 for i in range(0, int(max_b) + 1)}
 
     for i in range(0, img.size[0]):
         for j in range(0, img.size[1]):
@@ -339,22 +338,6 @@ def build_histogram(img: Imagem):
     print(g)
     print(b)
     return [r, g, b]
-
-
-def plot_graficos_de_barras(lista_de_dicionarios):
-    fig, axs = plt.subplots(1, len(lista_de_dicionarios), figsize=(18, 6))
-    canais_cor = ["R", "G", "B"]
-    for i, dicionario in enumerate(lista_de_dicionarios):
-        chaves = list(dicionario.keys())
-        valores = list(dicionario.values())
-
-        axs[i].bar(chaves, valores)
-        axs[i].set_xlabel('Niveis de quantização')
-        axs[i].set_ylabel('Valores')
-        axs[i].set_title('Canal {}'.format(canais_cor[i]))
-
-    plt.tight_layout()
-    plt.show()
 
 
 def save_image(img: Imagem, path: str):
@@ -391,6 +374,7 @@ def tranfereS(img1_path: str, img2_path: str, save_path: str):
     img2 = open_image(img2_path)
     filtro_transfere_saturacao(img1, img2)
     save_image(img2, save_path)
+
 
 def makecorelation(path_image: str, path_mask: str):
     img = open_image(path_image)
