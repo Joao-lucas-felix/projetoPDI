@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="5f8a2f51-8e89-45ed-9c8d-595d8401ec74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dacing 150 sat.png" beforeDir="false" />
@@ -22,6 +23,9 @@
       <change beforePath="$PROJECT_DIR$/teste_trasfere_sat.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste_trasfere_sat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testes_correlation.py" beforeDir="false" afterPath="$PROJECT_DIR$/testes_correlation.py" afterDir="false" />
     </list>
+=======
+    <list default="true" id="5f8a2f51-8e89-45ed-9c8d-595d8401ec74" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +41,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< Updated upstream
         <entry key="$PROJECT_DIR$" value="master" />
+=======
+        <entry key="$PROJECT_DIR$" value="2d81c1976a528b7fb12c29fd29d068b98c74c5fe" />
+>>>>>>> Stashed changes
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +76,7 @@
     &quot;Python.teste_06.executor&quot;: &quot;Debug&quot;,
     &quot;Python.teste_07.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_08.executor&quot;: &quot;Run&quot;,
+<<<<<<< Updated upstream
     &quot;Python.teste_09.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_10.executor&quot;: &quot;Run&quot;,
     &quot;Python.teste_aditivo_matiz.executor&quot;: &quot;Run&quot;,
@@ -82,6 +91,12 @@
     &quot;git-widget-placeholder&quot;: &quot;in__development&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jlmac/PycharmProjects/projetoPDI/testes/Images&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+=======
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jlmac/PycharmProjects/projetoPDI/testes/Images&quot;,
+>>>>>>> Stashed changes
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
 }</component>
